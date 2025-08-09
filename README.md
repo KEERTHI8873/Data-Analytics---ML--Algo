@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Data-Analytics---Machine-Learning
 Machine Learning Algorithm Used – Random Forest Classifier
 1. Overview
@@ -91,3 +92,6 @@ Works well with small datasets.
 Robust to overfitting due to randomization.
 Handles missing values and outliers well.
 Provides explainability via feature importance.
+=======
+# Data-Analytics---ML--Algo
+>>>>>>> 19fbd36e60da01d478ec87c20baed4e6e5cb94c8
