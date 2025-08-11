@@ -1,97 +1,71 @@
-<<<<<<< HEAD
-# Data-Analytics---Machine-Learning
-Machine Learning Algorithm Used – Random Forest Classifier
-1. Overview
-Random Forest is a supervised machine learning algorithm primarily used for classification and regression tasks.
-It works by creating an ensemble of decision trees—hence the term "forest"—and making predictions based on the majority vote (classification) or average (regression) of those trees.
+Data Scientist – Machine Learning Algorithms
 
-In this project, Random Forest is used to classify Iris flowers into one of three species based on their physical measurements:
+This repository showcases a curated collection of Machine Learning algorithms, systematically organized into Supervised and Unsupervised learning categories. Each algorithm is implemented and linked to its dedicated section within this repository for in-depth exploration.
 
-Setosa
+🧠 Supervised Learning
+Supervised learning uses labeled data to train models for making predictions. It is primarily divided into two main types: Classification and Regression.
 
-Versicolor
+1. Classification Algorithms
+These algorithms are used for predicting a categorical output variable (e.g., species in the Iris dataset).
 
-Virginica
+Decision Trees
+A non-parametric supervised learning method used for classification and regression.
+Implementation: decision_tree_model.py
+Suitable Iris Dataset Features: sepal_length, sepal_width, petal_length, petal_width (features) to predict species (target).
 
-2. Why Random Forest for the Iris Dataset?
-The Iris dataset is small and balanced (150 samples, 4 features, 3 classes). Random Forest is chosen because:
+Support Vector Machines (SVM)
+Powerful and versatile models capable of performing linear or non-linear classification.
+Implementation: svm_model.py
+Suitable Iris Dataset Features: sepal_length, sepal_width, petal_length, petal_width (features) to predict species (target).
 
-High accuracy with minimal parameter tuning.
+K-Nearest Neighbors (KNN)
+A non-parametric, lazy learning algorithm that classifies data points based on the majority class of their nearest neighbors.
+Implementation: knn_model.py
+Suitable Iris Dataset Features: sepal_length, sepal_width, petal_length, petal_width (features) to predict species (target).
 
-Handles small datasets well without overfitting.
+Logistic Regression
+A linear model widely used for binary and multi-class classification problems.
+Implementation: logistic_regression_model.py
+Suitable Iris Dataset Features: sepal_length, sepal_width, petal_length, petal_width (features) to predict species (target).
 
-Can handle non-linear relationships between features and target.
+Random Forest
+An ensemble learning method that constructs multiple decision trees and outputs the mode of their classes.
+Implementation: random_forest_model.py
+Suitable Iris Dataset Features: sepal_length, sepal_width, petal_length, petal_width (features) to predict species (target).
 
-Provides feature importance scores to understand which measurements matter most.
+2. Regression Algorithms
+These algorithms are used for predicting a continuous output variable (e.g., sepal_length in the Iris dataset).
 
-3. How Random Forest Works
-Step 1: Bootstrapping the Data
-Random Forest starts by creating multiple subsets of the original dataset using bootstrapping (sampling with replacement). Each subset is used to train a separate decision tree.
+Linear Regression
+A fundamental algorithm for modeling the relationship between a dependent variable and one or more independent variables by fitting a linear equation.
+Implementation: linear_regression_model.py
+Suitable Iris Dataset Features: sepal_width, petal_length, petal_width (features) to predict sepal_length (target).
 
-Step 2: Random Feature Selection
-When building each tree, the algorithm randomly selects a subset of features at each split rather than considering all features. This introduces randomness and helps avoid correlation between trees.
+💡 Unsupervised Learning
+Unsupervised learning uses unlabeled data to find patterns, structures, and relationships within the data.
 
-Step 3: Growing Decision Trees
-Each decision tree learns decision rules like:
+1. Clustering Algorithms
+These algorithms are used for grouping data points into clusters based on their similarity.
 
-If Petal Length ≤ 2.45 cm, then species = Setosa.
+K-Means Clustering
+Partitions n observations into k clusters, where each observation belongs to the cluster with the nearest mean.
+Implementation: kmeans_clustering.py
+Suitable Iris Dataset Features: sepal_length, sepal_width, petal_length, petal_width. Aims to group similar iris flowers.
 
-Else, check Petal Width to decide between Versicolor and Virginica.
+Hierarchical Clustering
+Builds a hierarchy of clusters, either by merging (agglomerative) or splitting (divisive) clusters.
+Implementation: hierarchical_clustering.py
+Suitable Iris Dataset Features: sepal_length, sepal_width, petal_length, petal_width. Reveals nested groupings.
 
-Step 4: Voting Mechanism
-When a new sample is given, every decision tree predicts a class label. The majority vote is taken as the final prediction.
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+Identifies clusters based on data point density, capable of finding arbitrarily shaped clusters and detecting outliers.
+Implementation: dbscan_clustering.py
+Suitable Iris Dataset Features: sepal_length, sepal_width, petal_length, petal_width. Groups dense regions and marks sparse points as noise.
 
-Example:
+2. Dimensionality Reduction Algorithms
+These algorithms are used for reducing the number of features (dimensions) in a dataset while retaining important information.
 
-Tree 1 → Setosa
-
-Tree 2 → Setosa
-
-Tree 3 → Versicolor
-Result: Setosa (majority vote)
-
-4. Key Parameters Used in This Project
-Parameter	Description	Example Value
-n_estimators	Number of decision trees in the forest	100
-max_depth	Maximum depth of each tree	None (grow fully)
-random_state	Ensures reproducibility of results	42
-criterion	Function to measure split quality	"gini" or "entropy"
-
-5. Evaluation Metrics
-We evaluate the Random Forest model using:
-
-Accuracy Score – Percentage of correctly predicted samples.
-
-Confusion Matrix – Shows the number of correct and incorrect predictions for each class.
-
-Classification Report – Includes precision, recall, and F1-score for each class.
-
-Example:
-Accuracy: 96.67%
-Precision (Setosa): 1.00
-Recall (Versicolor): 0.95
-F1-score (Virginica): 0.96
-
-6. Feature Importance in Iris Dataset
-Random Forest provides a feature importance ranking to understand which features influence predictions the most.
-
-Example output:
-
-Petal Length → Most important feature.
-
-Petal Width → Second most important.
-
-Sepal Length
-
-Sepal Width
-
-This aligns with botanical knowledge—petal measurements are more effective for distinguishing species than sepal measurements.
-
-7. Advantages of Random Forest
-Works well with small datasets.
-Robust to overfitting due to randomization.
-Handles missing values and outliers well.
-Provides explainability via feature importance.
-=======
-# Data-Analytics---ML--Algo
->>>>>>> 19fbd36e60da01d478ec87c20baed4e6e5cb94c8
+PCA (Principal Component Analysis)
+Transforms correlated variables into a smaller set of uncorrelated variables (principal components) that capture most of the data's variance.
+Implementation: pca_dimensionality_reduction.py
+Suitable Iris Dataset Features: sepal_length, sepal_width, petal_length, petal_width. Reduces the four features to fewer principal components for easier visualization or analysis.
